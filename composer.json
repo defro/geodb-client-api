@@ -10,19 +10,10 @@
       "email": "ffgalvao@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "path",
-      "url": "../BaseClientApi",
-      "options": {
-        "symlink": true
-      }
-    }
-  ],
   "require": {
     "php": ">=7.1",
     "ext-json": "*",
-    "fgalvao/base-client-api": "dev-master"
+    "fgalvao/base-client-api": "^0.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.3"

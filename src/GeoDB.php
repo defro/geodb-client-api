@@ -21,6 +21,11 @@ class GeoDB
 
     /**
      * Build the client setting
+     * ##Settings
+     * * BASE_URL (required)
+     * * API_HOST (required)
+     * * API_KEY (required)
+     * * DEV_MODE
      *
      * @param array $settings
      *

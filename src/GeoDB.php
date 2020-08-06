@@ -111,32 +111,4 @@ class GeoDB
         return $this->geo->cities($countryCode, $regionCode, $prefix, $langCode, $params);
     }
 
-
-    /**
-     * Add a new Delivery
-     *
-     * @param string $signedRequestUrl
-     *
-     * @return Response
-     */
-    public static function delivery(string $signedRequestUrl)
-    {
-        return static::client()->delivery($signedRequestUrl);
-    }
-
-
-    /**
-     * Add earnings
-     *
-     * @param string $provisionId
-     * @param array  $params
-     *
-     * @return Response
-     */
-    public static function earning(string $provisionId, array $params)
-    {
-        return static::client()->earning($provisionId, $params);
-    }
-
-
 }

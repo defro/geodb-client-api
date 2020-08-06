@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'BASE_URL' => 'https://wft-geo-db.p.rapidapi.com/',
+    'API_HOST' => 'wft-geo-db.p.rapidapi.com',
+    'API_KEY'  => '',
+    'DEV_MODE' => true,
+];

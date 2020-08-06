@@ -1,2 +1,2 @@
 # geodb-client-api
-A client for GeoDB Api
+PHP client for GeoDB Cities API

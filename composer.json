@@ -13,7 +13,7 @@
   "require": {
     "php": ">=7.1",
     "ext-json": "*",
-    "fgalvao/base-client-api": "^0.1"
+    "fgalvao/base-client-api": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.3"

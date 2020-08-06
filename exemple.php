@@ -24,8 +24,9 @@ function checkSuccess($resp)
     }
 }
 
+$clientSetting = GeoDB::buildClientSettings($config);
 
-$geo = new GeoDB(new HttpClient($config));
+$geo = new GeoDB(new HttpClient($clientSetting));
 
 echo '<pre>';
 echo '<b>List all countries</b><br/>';

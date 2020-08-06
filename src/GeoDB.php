@@ -5,6 +5,7 @@ namespace fGalvao\GeoDB;
 use fGalvao\BaseClientApi\HttpClient;
 use fGalvao\BaseClientApi\Response;
 use fGalvao\GeoDB\Api\Geo;
+use InvalidArgumentException;
 
 class GeoDB
 {
@@ -16,6 +17,34 @@ class GeoDB
     public function __construct(HttpClient $httpClient)
     {
         $this->geo = new Geo($httpClient);
+    }
+
+    /**
+     * Build the client setting
+     *
+     * @param array $settings
+     *
+     * @return array
+     */
+    public static function buildClientSettings(array $settings): array
+    {
+        $missing = array_diff(['BASE_URL', 'API_HOST', 'API_KEY'], array_keys($settings));
+        if (count($missing)) {
+            throw new InvalidArgumentException(sprintf('Missing required setting: %s', implode(',', $missing)));
+        }
+
+        return [
+            'verify'      => !$settings['DEV_MODE'] ?? true,
+            'http_errors' => false,
+            // Base URI is used with relative requests
+            'base_uri'    => ltrim($settings['BASE_URL'], '/'),
+            'headers'     => [
+                'Content-Type'    => 'application/json',
+                'Accept'          => 'application/json',
+                'x-rapidapi-host' => $settings['API_HOST'],
+                'x-rapidapi-key'  => $settings['API_KEY'],
+            ],
+        ];
     }
 
 

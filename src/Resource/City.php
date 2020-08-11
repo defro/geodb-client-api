@@ -13,6 +13,7 @@ use fGalvao\BaseClientApi\Resource;
  * @property string $city
  * @property float  $latitude
  * @property float  $longitude
+ * @property string $wikiDataId
  *
  * @package fGalvao\GeoDB\Api\Resource
  */
@@ -22,7 +23,4 @@ class City extends Resource
 
     protected $map = [];
 
-    protected $ignore = [
-        'wikiDataId',
-    ];
 }

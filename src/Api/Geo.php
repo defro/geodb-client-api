@@ -2,7 +2,7 @@
 
 namespace fGalvao\GeoDB\Api;
 
-use fGalvao\BaseClientApi\Requester;
+use fGalvao\BaseClientApi\Requestor;
 use fGalvao\BaseClientApi\Response;
 use fGalvao\GeoDB\Resource\City as CityResource;
 use fGalvao\GeoDB\Resource\Country as CountryResource;
@@ -14,7 +14,7 @@ use fGalvao\GeoDB\Resource\Region as RegionResource;
  * @package fGalvao\GeoDB\Api
  * @link    https://wirefreethought.github.io/geodb-cities-api-docs
  */
-class Geo extends Requester
+class Geo extends Requestor
 {
 
     /**
@@ -49,7 +49,7 @@ class Geo extends Requester
             $params['languageCode'] = $langCode;
         }
 
-        $_response = $this->get($uri, $params);
+        $_response = $this->getRequest($uri, $params);
         $response  = $this->toResourceResponse($_response, CountryResource::class);
 
         return $response;
@@ -92,7 +92,7 @@ class Geo extends Requester
             $params['languageCode'] = $langCode;
         }
 
-        $_response = $this->get($uri, $params);
+        $_response = $this->getRequest($uri, $params);
         $response  = $this->toResourceResponse($_response, RegionResource::class);
 
         return $response;
@@ -156,7 +156,7 @@ class Geo extends Requester
             $params['sort'] = 'population,name';
         }
 
-        $_response = $this->get($uri, $params);
+        $_response = $this->getRequest($uri, $params);
         $response  = $this->toResourceResponse($_response, CityResource::class);
 
         return $response;

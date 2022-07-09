@@ -28,7 +28,6 @@
       "fGalvao\\GeoDB\\Tests\\": "tests/"
     }
   },
-  "minimum-stability": "dev",
   "repositories": [
     {
       "type": "vcs",
